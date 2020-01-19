@@ -1,0 +1,17 @@
+.title {
+	margin: 0;
+	font-size: 100px;
+}
+
+.by {
+	font-size: 30px;
+	margin: 5px 0px 50px 0px;
+}
+
+.descript {
+	font-size: 20px;
+}
+
+.game-link {
+	font-size: 20px;
+}

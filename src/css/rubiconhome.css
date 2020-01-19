@@ -1,0 +1,25 @@
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+h2 {
+	margin: 5px;
+	font-size: 18px;
+}
+
+.instructions {
+	margin: 30px;
+}
+
+.instructions p {
+	width: 400px;
+}
+
+.virtual-instructions {
+	width: 600px;
+}
+
+.virtual-instructions h4 {
+	margin: 15px;
+}
