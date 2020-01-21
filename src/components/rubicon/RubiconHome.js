@@ -34,6 +34,7 @@ points for that space.</p>
 				<h4>You can create a game by going to <a>dahn-games.web.app/rubicon/{"<your_game_name>"}</a> and sending that link to your opponent.
 				</h4>
 				<h4>Click on the map to make moves and on the values in the bottom-left box to keep score and player names.</h4>
+				<h4>Have fun!</h4>
 			</div>
 		</div>
 	)

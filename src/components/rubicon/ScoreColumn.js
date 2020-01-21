@@ -1,6 +1,6 @@
 import React from 'react'
 import ContentEditable from 'react-contenteditable'
-import Value from './Value'
+import Value from '../Value'
 
 class ScoreColumn extends React.Component {
 	render() {

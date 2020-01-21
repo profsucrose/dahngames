@@ -68,6 +68,8 @@ button {
 	width: 14px;
 	height: 14px;
 	border-radius: 100%;
+	position: relative;
+	z-index: 9;
 }
 
 .map, .point {

@@ -1,0 +1,130 @@
+.map-usonia {
+	width: 960px;
+	cursor: none;
+	z-index: 0;
+	position: relative;
+}
+
+th {
+	padding: 5px !important;
+}
+
+.player-name {
+	margin-bottom: 0px !important;
+}
+
+.player-name-container {
+	display: flex;
+	justify-content: center;
+}
+
+.title-usonia {
+	height: 65px;
+}
+
+.current-turn {
+	border: 2px solid #A0D8CE;
+	padding: 5px !important;
+	font-weight: bold;
+}
+
+.btn-game {
+	display: block !important;
+	margin-left: 0px !important;
+	z-index: 9 !important;
+}
+.tr td:not(:first-child) {
+	text-align: center;
+}
+
+.table-header-usonia th {
+	width: 220px;
+	background-color: lightgray !important;
+	text-align: center !important;
+}
+
+.table-usonia {
+	width: 600px !important;
+	margin-right: 15px !important;
+}
+
+.hide-cursor {
+	cursor: none;
+}
+
+.seq-item {
+	padding: 7px;
+}
+
+.fit-map-tile {
+	width: 48px !important;
+	height: 48px !important;
+	z-index: 0;
+}
+
+.triangle, .square {
+	width: 25px;
+	height: 25px;
+}
+
+.fill-in-box {
+	display: flex;
+	width: 110px;
+	justify-content: space-around;
+	border: 3px solid black;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
+.fill-in-box div {
+	cursor: pointer;
+}
+
+.fill-in-select-container {
+	display: flex;
+}
+
+.triangle {
+	clip-path: polygon(0% 0, 0 100%, 100% 100%);
+	background-color: gray;
+}
+
+.yellow:before {
+	height: 15px;
+	width: 15px;
+	transform: rotate(45deg);
+	background-color: yellow;
+}
+
+.red {
+	background: red;
+}
+
+.set-sequence {
+	display: flex;
+	flex-direction: column;
+	border-style: solid;
+	padding: 10px;
+	width: 170px;
+	justify-content: center;
+}
+
+.sequence {
+	display: flex;
+	justify-content: center;
+}
+
+.sequence div {
+	margin: 0px 15px 5px 15px;
+}
+
+.header-box {
+	margin-left: 15px;
+	width: 100%;
+}
+
+.upper-section { 
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import title from '../../static/rubicon/title.png'
 import map from '../../static/rubicon/map.png'
-import Point from './Point'
+import Point from '../Point'
 import app from '../../firebase'
 import Scorebox from './Scorebox'
 
@@ -159,18 +159,25 @@ class Rubicon extends React.Component {
 
 	onGameDataChange = docSnapshot => {
 		const gameData = docSnapshot.data() ?? {}
-		if (Object.keys(gameData).length) {
+		if (Object.keys(gameData).length && Object.keys(gameData.players).length) {
 			this.setState({
 				players: gameData.players
 			})
 		}
 	}
 
+	parseName = string => {
+		return string.split("<div>").join("").split("</div>").join("").split("<br>").join("")
+	}
+
 	onPlayerChange = (event, type, player, isPlayerName) => {
 		let newPlayerData = {}
 		if (isPlayerName) {
 			newPlayerData = this.state.players
-			newPlayerData[type].name = event.target.value
+			newPlayerData[type].name = this.parseName(event.target.value)
+			this.setState({
+				players: newPlayerData
+			})
 		} else {
 			if (String(parseInt(event.target.value)) === event.target.value || event.target.value === "") {
 				const newScore = JSON.parse(JSON.stringify(this.state.players[player].scores))
@@ -185,6 +192,7 @@ class Rubicon extends React.Component {
 				}
 			} else {
 				this.forceUpdate()
+				return
 			}
 		}
 		firestore.doc(`games/rubicon/games/${this.props.match.params.id}`).set({
@@ -193,6 +201,7 @@ class Rubicon extends React.Component {
 	}
 
 	render() {
+		console.log(this.state)
 		return (
 			<div>
 				<div className="container">
@@ -200,7 +209,7 @@ class Rubicon extends React.Component {
 					<h3 className="gameid">Game ID: {this.props.match.params.id}</h3>
 					<div className="details">
 						<div>Turn <span style={{ color: this.state.currentPoint.color }}>{this.state.currentPoint.color.toUpperCase()}</span></div>
-						<div>{this.state.currentpoint.turn ? `Move ${this.state.currentPoint.turn}` : "First move"}</div>
+						<div>{this.state.currentPoint.turn ? `Move ${this.state.currentPoint.turn}` : "First move"}</div>
 						<div>{this.movesLeft()} move{this.movesLeft() > 1 ? "s" : ""} left</div>
 					</div>
 					<button className="mini ui button negative" onClick={this.removeLastPoint}>Undo Last Move</button>
